@@ -1,6 +1,11 @@
 package com.example.foodplanner.presentation.navigation
 
-import androidx.compose.material3.*
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
@@ -18,7 +23,6 @@ fun BottomNavBar(navController: NavController) {
         BottomBarScreen.ShoppingList
     )
 
-    // currentBackStackEntryAsState возвращает State<NavBackStackEntry?>
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
@@ -27,11 +31,11 @@ fun BottomNavBar(navController: NavController) {
             NavigationBarItem(
                 icon = {
                     Icon(
-                        painter = painterResource(id = screen.icon),            // <- drawable (Int)
-                        contentDescription = stringResource(id = screen.title) // <- строка из resources
+                        painter = painterResource(id = screen.icon),
+                        contentDescription = stringResource(id = screen.title)
                     )
                 },
-                label = { Text(text = stringResource(id = screen.title)) },   // <- stringResource вместо Int
+                label = { Text(text = stringResource(id = screen.title)) },
                 selected = currentRoute == screen.route,
                 onClick = {
                     if (currentRoute != screen.route) {
