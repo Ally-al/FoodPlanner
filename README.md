@@ -19,8 +19,8 @@ Android-приложение на Jetpack Compose для поиска рецеп
 - Navigation Compose
 - MVI + Clean Architecture
 - Hilt (DI)
-- Retrofit + Moshi
-- RxJava 3
+- Retrofit
+- Kotlin Coroutines
 - Room
 - WorkManager / Foreground Service
 
